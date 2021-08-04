@@ -1,31 +1,31 @@
 /* 
 	Try Rhis 5-2
-	A queue class for characters.
+	A Stack class for characters.
 */
 
-class Queue {
-	char q[]; // this array holds the queue
+class Stack {
+	char q[]; // this array holds the Stack
 	int putloc, getloc; // the put and get indices
 
-	Queue (int size) {
-		q = new char[size]; // allocate memory for queue
+	Stack (int size) {
+		q = new char[size]; // allocate memory for Stack
 		putloc = getloc = 0;
 	}
 
-	// put a character into the queue
+	// put a character into the Stack
 	void put(char ch) {
 		if(putloc == q.length) {
-			System.out.println(" - Queue is full.");
+			System.out.println(" - Stack is full.");
 			return;
 		}
 		// putloc inreces after assigning a value
 		q[putloc++] = ch;
 	}
 
-	// get a character from the queue
+	// get a character from the Stack
 	char get() {
 		if(getloc == putloc) {
-			System.out.println(" - Queue is empty.");
+			System.out.println(" - Stack is empty.");
 			return (char) 0;
 		}
 
@@ -33,11 +33,11 @@ class Queue {
 	}
 }
 
-//Demonstrate the Queue class.
+//Demonstrate the Stack class.
 class QDemo {
 	public static void main(String args[]) {
-		Queue bigQ = new Queue(100);
-		Queue smallQ = new Queue(4);
+		Stack bigQ = new Stack(100);
+		Stack smallQ = new Stack(4);
 		char ch;
 		int i;
 
