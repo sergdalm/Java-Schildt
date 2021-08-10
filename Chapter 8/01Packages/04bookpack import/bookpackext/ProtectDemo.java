@@ -20,7 +20,7 @@ class ExtBook extends Book {
     public void setPublisher(String p) { publisher = p; }
 
     /* These are OK because subclass can access
-       a protected mwmwber */
+       a protected member */
     public String getTitle() { return title; }
     public void setTitle(String t) { title = t; }
     public String getAuthor() { return author; }
