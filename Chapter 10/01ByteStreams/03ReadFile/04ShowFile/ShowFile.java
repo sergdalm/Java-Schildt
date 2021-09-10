@@ -6,7 +6,7 @@
 import java.io.*;
 
 class ShowFile {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         int i;
         FileInputStream fin = null;
 
@@ -17,13 +17,18 @@ class ShowFile {
         }
 
         // The following code opens a file, reads characters until EOF
-        // is encountered, and then closes the file via finallt block.
+        // is encountered, and then closes the file via finally block.
         try {
             fin = new FileInputStream(args[0]); // Open the file
         
             do {
                 i = fin.read();// Read from the file
-                if(i != -1) System.out.print((char) i);
+                if(i != -1) { 
+                    // Display only characters
+                    if(i >= 32 && i <= 126) {
+                        System.out.print((char) i);
+                    }
+                }
             } while(i != -1);
         } catch (FileNotFoundException exc) {
             System.out.println("File Not Found");
@@ -38,6 +43,5 @@ class ShowFile {
                 System.out.println("Error closing file.");
             }
         }
-        
     }
 }
