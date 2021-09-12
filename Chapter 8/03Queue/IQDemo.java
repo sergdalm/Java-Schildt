@@ -3,6 +3,12 @@
 class FixedQueue implements ICharQ {
     private char q[]; // this array holds the queue
     private int putloc, getloc; // the put and get indices
+    static int a = 3;
+    if(a == 3) a = 4;
+
+    void ShowA() {
+        System.out.println(a);
+    }
 
     // Constuct an empty queue given its size.
     public FixedQueue(int size) {
@@ -177,5 +183,7 @@ public class IQDemo {
             System.out.print(ch);
         }
         System.out.println();
+
+        q1.ShowA();
     }
 }
