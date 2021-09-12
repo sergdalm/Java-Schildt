@@ -26,7 +26,8 @@ class MyClass implements B {
 
 class IFExtend {
     public static void main(String args[]) {
-        MyClass ob = new MyClass();
+        B ob;
+        ob = new MyClass();
 
         ob.meth1();
         ob.meth2();
