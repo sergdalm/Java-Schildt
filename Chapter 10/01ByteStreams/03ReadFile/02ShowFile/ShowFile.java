@@ -7,7 +7,7 @@
     java ShowFile TEST.TXT
  */ 
 
- import java.io.*;
+import java.io.*;
 class ShowFile {
     public static void main(String args[]) {
         int i;
