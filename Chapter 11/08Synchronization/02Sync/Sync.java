@@ -3,7 +3,7 @@
 class SumArray {
     private int sum;
 
-    synchronized int sumArray(int nums[]) {
+    int sumArray(int nums[]) {
         sum = 0; // reset sum
 
         for(int i = 0; i < nums.length; i++) {
@@ -17,10 +17,6 @@ class SumArray {
             }
         }
         return sum;
-    }
-
-    public void seconMethod() {
-        System.out.println(Thread.currentThread().getName() + " calls the secon method.");
     }
 }
 
@@ -39,11 +35,12 @@ class MyThread implements Runnable {
 
     // Begin execution of new thread.
     public void run() {
-        int sum;
 
         System.out.println(thrd.getName() + " starting.");
 
-        answer = sa.sumArray(a);
+        synchronized (sa) {
+            answer = sa.sumArray(a);
+        }
         System.out.println("Sum for " + thrd.getName() + " is " + answer);
 
         System.out.println(thrd.getName() + " terminating.");
