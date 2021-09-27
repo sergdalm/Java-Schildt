@@ -3,8 +3,7 @@
 class SumArray {
     private int sum;
 
-    //synchronized 
-    int sumArray(int nums[]) {
+    synchronized int sumArray(int nums[]) {
         sum = 0; // reset sum
 
         for(int i = 0; i < nums.length; i++) {
@@ -18,6 +17,10 @@ class SumArray {
             }
         }
         return sum;
+    }
+
+    public void seconMethod() {
+        System.out.println(Thread.currentThread().getName() + " calls the secon method.");
     }
 }
 
@@ -51,7 +54,7 @@ class Sync {
     public static void main(String args[]) {
         int a[] = {1, 2, 3, 4, 5};
 
-        MyThread mt1 = new MyThread("CHild #1", a);
+        MyThread mt1 = new MyThread("Child #1", a);
         MyThread mt2 = new MyThread("Child #2", a);
 
         try {
