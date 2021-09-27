@@ -3,7 +3,6 @@
 class SumArray {
     private int sum;
 
-    //synchronized 
     int sumArray(int nums[]) {
         sum = 0; // reset sum
 
@@ -36,11 +35,12 @@ class MyThread implements Runnable {
 
     // Begin execution of new thread.
     public void run() {
-        int sum;
 
         System.out.println(thrd.getName() + " starting.");
 
-        answer = sa.sumArray(a);
+        synchronized (sa) {
+            answer = sa.sumArray(a);
+        }
         System.out.println("Sum for " + thrd.getName() + " is " + answer);
 
         System.out.println(thrd.getName() + " terminating.");
@@ -51,7 +51,7 @@ class Sync {
     public static void main(String args[]) {
         int a[] = {1, 2, 3, 4, 5};
 
-        MyThread mt1 = new MyThread("CHild #1", a);
+        MyThread mt1 = new MyThread("Child #1", a);
         MyThread mt2 = new MyThread("Child #2", a);
 
         try {

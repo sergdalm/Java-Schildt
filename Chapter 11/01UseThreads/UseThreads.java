@@ -34,6 +34,13 @@ class UseThreads {
         
         // Finally, start execution of the thread.
         newThrd.start();
+
+        // Make a thread in two statements
+        Thread newThrd2 = new Thread(new MyThread("Child #2"));
+        newThrd2.start();
+
+        // Make a thread in a single statement
+        new Thread(new MyThread("Child #3")).start();
         
 
         for(int i = 0; i < 50; i++) {

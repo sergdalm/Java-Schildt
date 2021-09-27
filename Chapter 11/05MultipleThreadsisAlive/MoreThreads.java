@@ -42,7 +42,7 @@ class MoreThreads {
                 }
         } while(mt1.thrd.isAlive() || 
                 mt2.thrd.isAlive() ||
-                mt2.thrd.isAlive());
+                mt3.thrd.isAlive());
         
         System.out.println("Main thread ending.");
     }
