@@ -4,7 +4,7 @@ class MyThread implements Runnable {
     // A reference to the thread is stored in thrd.
     Thread thrd;
 
-    // Contruct a new thread.
+    // Construct  a new thread.
     MyThread(String name) {
         // This thread is named when it is created.
         thrd = new Thread(this, name);
