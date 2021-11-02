@@ -54,6 +54,5 @@ class GenDemo {
         // that no cast is needed.
         String str = strOb.getob();
         System.out.println("value: " + str);
-
     }
 }
